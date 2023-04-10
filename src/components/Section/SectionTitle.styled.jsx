@@ -8,10 +8,5 @@ export const TitleSection = styled.section`
 
   padding-bottom: 50px;
 
-  /* border: 1px solid #000; */
-  /* background-color: rgb(206, 207, 207); */
 `;
 
-export const MainTitle = styled.h1`
-  padding-left: 10px;
-`;

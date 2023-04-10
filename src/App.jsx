@@ -12,22 +12,16 @@ import ContactsListViews from 'views/ContactsListViews';
 import PrivateRoute from 'components/Navigation/PrivatRoute';
 import RestrictedRoute from 'components/Navigation/RestrictedRoute';
 
-
-
-
 // const HeaderApp = lazy(() => import('./components/HeaderApp/HeaderApp'));
 // const HomeView = lazy(() => import('./views/HomeView'));
 // const RegisterView = lazy(() => import('./views/RegisterView'));
 // const LoginView = lazy(() => import('./views/LoginView'));
 // const ContactsListViews = lazy(() => import('./views/ContactsListViews'));
 
-
-
 const App = () => {
     const dispatch = useDispatch()
     const isUserRefresh = useSelector(getUserRefresh)
     const IsLoggedIn = useSelector(getIsLoggedIn)
-    console.log(IsLoggedIn)
 
     useEffect(() => {
         dispatch(fetchCurrentUser());
@@ -39,28 +33,31 @@ const App = () => {
             <Container maxW={IsLoggedIn ? '650px' : '550px'}>
                 <Routes>
                     <Route path='/' element={<HeaderApp />}>
-                        {/* <Route index element={<HomeView />} /> */}
+
                         <Route index
                             path="/"
                             element={
                                 <RestrictedRoute component={<HomeView />} redirectTo="/contacts" />
                             }
                         />
-                        {/* <Route path='/register' element={<RegisterView />} /> */}
+
                         <Route
                             path="/register"
                             element={
                                 <RestrictedRoute component={<RegisterView />} redirectTo="/contacts" />
                             }
                         />
-                        {/* <Route path='/login' element={<LoginView />} /> */}
+
                         <Route
                             path="/login"
                             element={
                                 <RestrictedRoute component={<LoginView />} redirectTo="/contacts" />
                             }
                         />
-                        <Route path='/contacts' element={<PrivateRoute component={<ContactsListViews />} redirectTo='/login' />} />
+                        <Route
+                            path='/contacts'
+                            element={
+                                <PrivateRoute component={<ContactsListViews />} redirectTo='/login' />} />
 
                     </Route>
                 </Routes>

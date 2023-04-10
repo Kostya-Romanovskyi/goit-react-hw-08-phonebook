@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { TitleSection } from './SectionTitle.styled'
 
-function SectionTitle({ title, children }) {
+function SectionTitle({ children }) {
     return (
         <TitleSection>
             {children}
