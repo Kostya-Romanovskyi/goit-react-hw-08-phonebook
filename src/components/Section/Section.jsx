@@ -1,10 +1,9 @@
 import PropTypes from 'prop-types';
 import { SubSection } from './Section.styled'
 
-function Section({ subTitle, children }) {
+function Section({ children }) {
     return (
         <SubSection>
-            <h2>{subTitle}</h2>
             {children}
         </SubSection>
     );

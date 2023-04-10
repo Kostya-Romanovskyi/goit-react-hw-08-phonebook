@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { filterQuery } from 'redux/filterSlice';
-import { Text, FindInput } from './Filter.styled'
+import { Input, Heading } from '@chakra-ui/react';
 
 function Filter() {
 
@@ -11,8 +11,8 @@ function Filter() {
     const dispatch = useDispatch()
 
     return <label>
-        <Text>Find contact by name</Text>
-        <FindInput onChange={handleGeyValue} name="filter" type="text" />
+        <Heading as='h3' size='md' mb={4} color='#A0AEC0'>Find contact by name</Heading>
+        <Input mb={4} placeholder="Enter contact name to find him" color='#A0AEC0' onChange={handleGeyValue} name="filter" type="text" />
     </label>
 }
 

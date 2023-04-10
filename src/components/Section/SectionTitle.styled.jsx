@@ -6,8 +6,10 @@ export const TitleSection = styled.section`
   margin-left: 20px;
   margin-top: 20px;
 
-  border: 1px solid #000;
-  background-color: rgb(206, 207, 207);
+  padding-bottom: 50px;
+
+  /* border: 1px solid #000; */
+  /* background-color: rgb(206, 207, 207); */
 `;
 
 export const MainTitle = styled.h1`
