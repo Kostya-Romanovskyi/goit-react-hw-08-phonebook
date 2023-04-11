@@ -8,6 +8,7 @@ import {
   InputRightElement,
   Heading,
   Box,
+  useToast,
 } from '@chakra-ui/react';
 import { MdLogin } from 'react-icons/md';
 
@@ -15,6 +16,7 @@ const LoginView = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
+  const toast = useToast();
 
   const [show, setShow] = useState(false);
   const handleClick = () => setShow(!show);
@@ -33,7 +35,10 @@ const LoginView = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (email === '' || password === '') {
-      return;
+      return toast({
+        title: `Please, fill the empty fields`,
+        status: 'warning',
+      });
     }
     dispatch(logIn({ email, password }));
     setEmail('');

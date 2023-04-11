@@ -34,12 +34,17 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<HeaderApp />}>
 
-                        <Route index
+                        {/* <Route index
                             path="/"
                             element={
-                                <RestrictedRoute component={<HomeView />} redirectTo="/contacts" />
+                                <RestrictedRoute component={<HomeView />} redirectTo="/login" />
                             }
+                        /> */}
+                        <Route index
+                            path="/"
+                            element={<HomeView />}
                         />
+
 
                         <Route
                             path="/register"
@@ -48,20 +53,24 @@ const App = () => {
                             }
                         />
 
+
                         <Route
                             path="/login"
                             element={
                                 <RestrictedRoute component={<LoginView />} redirectTo="/contacts" />
                             }
                         />
+
+
                         <Route
                             path='/contacts'
                             element={
                                 <PrivateRoute component={<ContactsListViews />} redirectTo='/login' />} />
 
                     </Route>
+
                 </Routes>
-            </Container>
+            </Container >
         )
     );
 

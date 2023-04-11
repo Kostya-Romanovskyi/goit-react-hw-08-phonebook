@@ -7,6 +7,7 @@ import {
   InputGroup,
   InputRightElement,
   Heading,
+  useToast,
 } from '@chakra-ui/react';
 
 const RegisterView = () => {
@@ -15,6 +16,7 @@ const RegisterView = () => {
   const [password, setPassword] = useState('');
   const [show, setShow] = useState(false);
 
+  const toast = useToast();
   const handleClick = () => setShow(!show);
 
   const dispatch = useDispatch();
@@ -35,9 +37,16 @@ const RegisterView = () => {
   const handleSubmit = e => {
     e.preventDefault();
     if (email === '' || password === '' || email === '') {
-      return;
+      return toast({
+        title: `Please, fill the empty fields`,
+        status: 'warning',
+      });
     }
     dispatch(register({ name, email, password }));
+    toast({
+      title: `you have successfully registered, please login`,
+      status: 'success',
+    });
     setName('');
     setEmail('');
     setPassword('');

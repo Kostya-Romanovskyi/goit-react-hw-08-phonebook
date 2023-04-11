@@ -1,4 +1,5 @@
 import { Link, Outlet, useLocation } from "react-router-dom"
+import { Suspense } from "react"
 import { useSelector } from "react-redux"
 import { getIsLoggedIn } from "redux/auth/authSlice"
 import { Link as ChakraLink, Flex, Spacer, Box } from '@chakra-ui/react'
@@ -39,7 +40,10 @@ const HeaderApp = () => {
                     {isLoggedIn ? <UserMenu /> : <AuthNav />}
                 </Flex>
             </Box>
-            <Outlet />
+
+            <Suspense fallback={<div>Loading...</div>}>
+                <Outlet />
+            </Suspense>
         </div>
     )
 }
