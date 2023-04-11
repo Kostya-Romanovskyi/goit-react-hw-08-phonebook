@@ -34,12 +34,7 @@ const App = () => {
                 <Routes>
                     <Route path='/' element={<HeaderApp />}>
 
-                        {/* <Route index
-                            path="/"
-                            element={
-                                <RestrictedRoute component={<HomeView />} redirectTo="/login" />
-                            }
-                        /> */}
+
                         <Route index
                             path="/"
                             element={<HomeView />}
