@@ -2,7 +2,7 @@
   "name": "react-homework-template",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Kostya-Romanovskyi.github.io/goit-react-hw-08-phonebook/",
+  "homepage": "https://Kostya-Romanovskyi.github.io/phonebook-react/",
   "dependencies": {
     "@bigheads/core": "^0.3.3",
     "@chakra-ui/react": "^2.5.5",
