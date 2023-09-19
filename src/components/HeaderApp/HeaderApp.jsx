@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { getIsLoggedIn } from 'redux/auth/authSlice';
-import { Link as ChakraLink, Flex, Spacer } from '@chakra-ui/react';
+import { Link as ChakraLink } from '@chakra-ui/react';
 import UserMenu from 'components/UserMenu/UserMenu';
 import AuthNav from 'components/authNav/AuthNav';
 import { FlexContainer, Box, NavItems } from './HeaderApp.styled';

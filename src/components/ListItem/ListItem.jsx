@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
-import { Button, Text, Flex, Spacer } from '@chakra-ui/react';
+import { Button, Spacer } from '@chakra-ui/react';
 import { AvatarGeneratorContacts } from 'images/avatar';
 import { Item, Name, Number } from './ListItem.style';
 
