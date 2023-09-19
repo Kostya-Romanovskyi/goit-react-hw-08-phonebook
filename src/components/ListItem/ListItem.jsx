@@ -1,30 +1,32 @@
 import PropTypes from 'prop-types';
-import { useDispatch } from "react-redux";
+import { useDispatch } from 'react-redux';
 import { deleteContact } from 'redux/operations';
 import { Button, Text, Flex, Spacer } from '@chakra-ui/react';
 import { AvatarGeneratorContacts } from 'images/avatar';
-
+import { Item, Name, Number } from './ListItem.style';
 
 const ListItem = ({ id, name, number }) => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const handleDeleteContact = () => dispatch(deleteContact(id))
+  const handleDeleteContact = () => dispatch(deleteContact(id));
 
-    return (
-        <Flex as='li' alignItems='center' justifyContent='space-between' mb={6}>
-            <AvatarGeneratorContacts />
-            <Text as='b' color='#A0AEC0'>{name}</Text>
-            <Text as='b' color='#A0AEC0' ml={4}>{number}</Text>
-            <Spacer />
-            <Button onClick={handleDeleteContact} type='button'>delete</Button>
-        </Flex>
-    )
-}
+  return (
+    <Item>
+      <AvatarGeneratorContacts />
+      <Name>{name}</Name>
+      <Number>{number}</Number>
+      <Spacer />
+      <Button onClick={handleDeleteContact} type="button">
+        delete
+      </Button>
+    </Item>
+  );
+};
 
-export default ListItem
+export default ListItem;
 
 ListItem.propTypes = {
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    number: PropTypes.string.isRequired,
-}
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+};

@@ -1,12 +1,8 @@
 import { BigHead } from '@bigheads/core';
 
 export const AvatarGeneratorContacts = () => {
-  return <BigHead width="70px" height="70px" />;
+  return <BigHead width="70px" height="70px" style={{ marginBottom: 10 }} />;
 };
-
-// export const AvatarGeneratorUser = () => {
-//   return <BigHead width="50px" height="50px" />;
-// };
 
 export const AvatarGeneratorUser = () => {
   return (

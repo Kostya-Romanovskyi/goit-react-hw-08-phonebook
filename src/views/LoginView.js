@@ -53,7 +53,7 @@ const LoginView = () => {
       <form onSubmit={handleSubmit} autoComplete="off">
         <label>
           <Input
-            placeholder="Enter login"
+            placeholder="Enter e-mail"
             _placeholder={{ opacity: 0.4, color: '#90CDF4' }}
             color="#A0AEC0"
             mb={6}
